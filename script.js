@@ -200,29 +200,41 @@ function changeImageWeather(weather) {
 
     let cloudsStatus = weather.clouds.all
 
+    console.log(cloudsStatus)
+    console.log(dayOrNight)
 
-    if (cloudsStatus >= 50 && cloudsStatus <= 75 && dayOrNight == 'Day') {
-        imgWeather.src = 'assets/clouds.png'
-        imgWeather.classList.add("margin-bottom")
-    } else {
-        imgWeather.src = 'assets/moon-clouds.png'
-        imgWeather.classList.add("margin-bottom")
+    if (dayOrNight == 'Day') {
+        if (cloudsStatus >= 50 && cloudsStatus <= 75) {
+            imgWeather.src = 'assets/clouds.png'
+            imgWeather.classList.add("margin-bottom")
+
+        }
+
+        if (cloudsStatus > 75 && dayOrNight == 'Day') {
+            imgWeather.src = 'assets/bad-weather.png'
+        }
+
+        if (cloudsStatus < 50 && dayOrNight == 'Day') {
+            imgWeather.src = 'assets/sun.png'
+            imgWeather.classList.add("margin-bottom")
+        }
     }
 
-    if (cloudsStatus > 75 && dayOrNight == 'Day') {
-        imgWeather.src = 'assets/bad-weather.png'
-    } else {
-        imgWeather.src = 'assets/rainy.png'
-        imgWeather.classList.add("margin-bottom")
-    }
+    if (dayOrNight == 'Night') {
+        if (cloudsStatus >= 50 && cloudsStatus <= 75) {
+            imgWeather.src = 'assets/moon-clouds.png'
+            imgWeather.classList.add("margin-bottom")
+            console.log(1)
+        }
 
+        if (cloudsStatus > 75 && dayOrNight == 'Day') {
+            imgWeather.src = 'assets/rainy.png'
+        }
 
-    if (cloudsStatus < 50 && dayOrNight == 'Day') {
-        imgWeather.src = 'assets/sun.png'
-        imgWeather.classList.add("margin-bottom")
-    } else {
-        imgWeather.src = 'assets/moon.png'
-        imgWeather.classList.add("margin-bottom")
+        if (cloudsStatus < 50 && dayOrNight == 'Day') {
+            imgWeather.src = 'assets/moon.png'
+            imgWeather.classList.add("margin-bottom")
+        }
     }
 
 }
@@ -233,14 +245,17 @@ modeScreen()
 
 function modeScreen() {
 
-    const hour = date.getHours()
+    // const hour = date.getHours()
 
-    const toggleBtn = document.querySelector('.btn-toggle');
+    // const toggleBtn = document.querySelector('.btn-toggle');
 
     const body = document.querySelector('body');
 
 
-    if (hour >= 6 && hour <= 18) { 
+
+    const hour = 21 ;
+
+    if (hour >= 6 && hour < 18) {  
         body.classList.remove('dark-mode')
     }
     else {

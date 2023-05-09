@@ -227,7 +227,7 @@ p {
 .icon-status {
     width: 20px;
     opacity: .8;
-    filter: grayscale(100%) invert(100%);
+    filter: grayscale(100%) invert(100%); ;
 }
 
 #hour {
