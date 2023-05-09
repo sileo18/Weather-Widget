@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Widget</title>
+    <!--FONTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="widget">
         <div class="right">
             <div class="container-hour">
-                <span></span>
-                <span></span>
+                <p id="hour">14</p>
+                <p id="minutes">23</p>
             </div>
 
             <div class="container-date">
-                <span></span>
+                <span id="date">
+                    dom
+                </span>
+                <span id="date1">
+                    ,
+                </span>
+                <span id="date2">
+                    7 
+                </span>
+                <span id="date3">
+                    mai.
+                </span>
             </div>
         </div>
         <div class="left">
             <div class="container-weather">
-
+                <div class="weather-img"><img class="img-weather" src="/assets/bad-weather.png"><span id="show-temp">12°</span></div>
+                <span id="local">Vila Jacui, São Pau...</span>
             </div>
 
             <div class="container-status">
-                <span>Ar</span>
-                <span>Bateria</span>
+                <div class="status-air">
+                    <div class="white-circle">
+                        <img class="icon-status" src="assets/air.png" alt="" srcset="">
+                        <span id="air">24%</span>
+                    </div>
+                </div>
+
+
+                <div class="status-umidity">
+                    <div class="white-circle">
+                        <img class="icon-status" src="assets/umidity.png" alt="" srcset="">
+                        <span id="umidity">73%</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+
+    <script src="script.js"></script>
 </body>
+
 </html>
