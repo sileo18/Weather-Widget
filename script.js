@@ -18,14 +18,14 @@ function showHours() {
     minuteContainer.innerHTML = minute
 
     let hourStr = hour.toString()
-    
+
 
     if (hourStr.length == 1) {
-        hourContainer.innerHTML = `0${hour}`     
+        hourContainer.innerHTML = `0${hour}`
     } else {
         hourContainer.innerHTML = hour
     }
-    
+
 
 
 
@@ -209,8 +209,8 @@ function changeImageWeather(weather) {
         imgWeather.classList.add("margin-bottom")
     }
 
-    if (cloudsStatus > 75 && dayOrNight == 'Day' ) {
-        imgWeather.src = 'assets/bad-weather.png'        
+    if (cloudsStatus > 75 && dayOrNight == 'Day') {
+        imgWeather.src = 'assets/bad-weather.png'
     } else {
         imgWeather.src = 'assets/rainy.png'
         imgWeather.classList.add("margin-bottom")
@@ -227,6 +227,27 @@ function changeImageWeather(weather) {
 
 }
 
+//Change Mode 
+
+modeScreen()
+
+function modeScreen() {
+
+    const hour = date.getHours()
+
+    const toggleBtn = document.querySelector('.btn-toggle');
+
+    const body = document.querySelector('body');
+
+
+    if (hour >= 6 && hour <= 18) { 
+        body.classList.remove('dark-mode')
+    }
+    else {
+        body.classList.add('dark-mode')
+    }
+
+}
 
 
 

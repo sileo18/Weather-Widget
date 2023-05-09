@@ -12,7 +12,15 @@
     --color-container-weather: #CBC9CB;
     --color-air: #FFCF28;
     --color-umidity: #1B8DF4;
+    --filter-icon: grayscale(100%);
+}
 
+.dark-mode {
+    --color-bg: #131d1f;
+    --color-hour: #e0bdfe;
+    --color-p: #c8c6cb;
+    --filter-icon: grayscale(100%) invert(100%);
+    --color-container-weather: #222f32;
 }
 
 body {
@@ -58,7 +66,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 p {
@@ -66,7 +74,12 @@ p {
     font-size: 80px;
     line-height: 110%;
     color: var(--color-hour);
+    transition: .5s;
 
+}
+
+#local {
+    color: var(--color-p);
 }
 
 .container-date {
@@ -76,7 +89,7 @@ p {
     gap: 4px;
 }
 
-.container-date > #date {
+.container-date>#date {
     font-weight: 800;
     font-size: 24px;
     line-height: 110%;
@@ -84,7 +97,7 @@ p {
 
 }
 
-.container-date > #date1 {
+.container-date>#date1 {
     font-weight: 800;
     font-size: 24px;
     line-height: 110%;
@@ -92,7 +105,7 @@ p {
 
 }
 
-.container-date > #date2 {
+.container-date>#date2 {
     font-weight: 800;
     font-size: 24px;
     line-height: 110%;
@@ -100,7 +113,7 @@ p {
 
 }
 
-.container-date > #date3 {
+.container-date>#date3 {
     font-weight: 800;
     font-size: 24px;
     line-height: 110%;
@@ -137,7 +150,7 @@ p {
 
 .weather-img>img {
     width: 36px;
-    height: 36px;    
+    height: 36px;
 }
 
 .margin-bottom {
@@ -167,7 +180,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .status-umidity {
@@ -214,6 +227,7 @@ p {
 .icon-status {
     width: 20px;
     opacity: .8;
+    filter: grayscale(100%) invert(100%);
 }
 
 #hour {
@@ -223,6 +237,6 @@ p {
 @media (max-width: 400px) {
     .widget {
         flex-direction: column;
-        height: 560px;        
+        height: 560px;
     }
 }
